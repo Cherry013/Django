@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <main class="cotainer" style="text-align: center;">
+            <h1 style="text-align: center;">Details</h1>
+            <h3>
+                {% if obj %}
+                    <ul><p>Teacher Name: {{ obj.name }}<br></p>
+                    <p>Class_Section: {{ obj.classSection }}<br></p></ul>
+                {% endif %}
+            </h3>
+        </main>
+    </body>
+</html>

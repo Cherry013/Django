@@ -1,0 +1,35 @@
+DJANGO  POINTS & COMMANDS
+
+NOTE:- urls.py - urlpatterns
+
+- Create Folder (mkdir folder_name)
+	cd folder_name (To change folder or directory)
+
+- To create project
+	django-admin startproject Project_Name
+
+- if not changed directory then use
+	django-admin startproject Project_Name folder_name
+
+- To create applications or apps in Project
+	python manage.py startapp App_name
+
+- To Run server or to run project
+	python manage.py runserver
+
+- Run 'python manage.py makemigrations' to create migrations for those changes
+
+- Run 'python manage.py migrate' to apply those changes to the database.
+
+- To perform migration for apps
+ # Note ---> Don't forget to include application name in 'INSTALLED_APPS' in 'settings.py' like 'polls.apps.PollsConfig' as polls has app module it contains 'PollsConfig' class
+	python manage.py makemigrations application_name
+
+- To see SQL command of the application you can use
+	python manage.py sqlmigrate application_name 0001 # 0001_initial.py this module generated from the makemigrations command
+
+- To Create Superuser use command
+	py manage.py createsuperuser
+	# Username: given cherry
+	# Email address: charan172003@gmail.com
+	# Password: cherry

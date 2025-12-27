@@ -1,0 +1,8 @@
+<h1 style="text-align:center"> {{ sec_name }}</h1>
+<h2 style="text-align:center">Student Details</h2>
+    {% for i in sec %}
+        <li>
+            <h3 style="text-align:center"> Name : {{ i.StudentName }} </h3>
+            <h3 style="text-align:center">Roll Number : {{ i.StudentID }} </h3>
+        </li>
+    {% endfor %}

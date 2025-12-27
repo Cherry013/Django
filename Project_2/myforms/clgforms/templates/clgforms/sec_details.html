@@ -1,0 +1,8 @@
+<h1> Section Page</h1>
+{% for x in sec %}
+    <li>
+        <h3 style="text-align: center;">Section Name : {{ x.SectionName }} </h3>
+        <h3 style="text-align: center;">Teacher Name : {{ x.Sec_Teacher }} </h3>
+        <h3 style="text-align: center;">Year : {{ x.S_Year }} </h3>
+    </li>
+{% endfor %}

@@ -33,3 +33,16 @@ NOTE:- urls.py - urlpatterns
 	# Username: given cherry
 	# Email address: charan172003@gmail.com
 	# Password: cherry
+
+
+
+
+all():
+--Class_name.objects.all()
+	Shows all the objects created for the class
+
+filter(): To filter the things within the object
+--Class_name.objects.filter(id=1) # here 'id' is class variable
+--Class_name.objects.filter(question_text__startswith="What") # question_text is class variable and '__startswith' is a keyword this will filter the sentence and gives output of objects that start with 'what' from the above syntax
+
+get():

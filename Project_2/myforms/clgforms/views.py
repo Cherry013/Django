@@ -10,9 +10,9 @@ from .models import Section, Students
 def index(request):
     return HttpResponse("<h1>Hello, world.</h1>")
 
-def section(request,sec_id):
-    x = Section.objects.get(pk=sec_id)
-    return HttpResponse(f"<h1>Sections</h1><br> <h3> Section Name : {x.SectionName}<h3><br> Teacher Name : {x.Sec_Teacher} <h3></h3>")
+# def section(request,sec_id):
+#     x = Section.objects.get(pk=sec_id)
+#     return HttpResponse(f"<h1>Sections</h1><br> <h3> Section Name : {x.SectionName}<h3><br> Teacher Name : {x.Sec_Teacher} <h3></h3>")
 
 def Sec_details(request):
     x = Section.objects.all()

@@ -1,10 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'clgforms/stform.css' %}">
 </head>
 <body>
+    <form action="{% url 'clgforms:insert_student' sec_id %}" method="post">
+    {% csrf_token %}
 
+        <fieldset>
+            <legend> {{ x }} Student Details</legend>
+             <div class="form-row">
+                <label for="StudentName">Student Name :- </label>
+                <input type="text" id="StudentName" name="StudentName">
+            </div>
+
+            <div class="form-row">
+                <label for="StudentID">Roll Number :- </label>
+                <input type="number" id="StudentID" name="StudentID">
+            </div>
+            <input type="submit" value="Insert">
+        </fieldset>
+        
+    </form>
 </body>
 </html>

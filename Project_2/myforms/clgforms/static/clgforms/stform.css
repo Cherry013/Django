@@ -1,0 +1,104 @@
+/* Page background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0096FF, #00c6a7);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Glass-style card */
+fieldset {
+  width: 450px;
+  padding: 40px 45px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Legend styling */
+legend {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #004d4d;
+  padding: 0 10px;
+}
+
+/* Row layout */
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+  width: 130px;
+  font-weight: 500;
+  color: #003333;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+/* Focus effect */
+input:focus {
+  outline: none;
+  border-color: #0096FF;
+  box-shadow: 0 0 0 3px rgba(0, 150, 255, 0.25);
+}
+
+/* Submit button */
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  background: linear-gradient(135deg, #0096FF, #0077cc);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button hover & active */
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+input[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile friendly */
+@media (max-width: 500px) {
+  fieldset {
+    width: 90%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    width: auto;
+    margin-bottom: 6px;
+  }
+}

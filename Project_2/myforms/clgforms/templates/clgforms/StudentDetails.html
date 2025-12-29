@@ -1,8 +1,61 @@
-<h1 style="text-align:center"> {{ sec_name }}</h1>
-<h2 style="text-align:center">Student Details</h2>
-    {% for i in sec %}
-        <li>
-            <h3 style="text-align:center"> Name : {{ i.StudentName }} </h3>
-            <h3 style="text-align:center">Roll Number : {{ i.StudentID }} </h3>
-        </li>
-    {% endfor %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0096FF, #00c6a7);
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    table {
+        width: 35%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden; /* keeps rounded corners */
+    }
+
+    th {
+        background-color: #0096FF;
+        color: white;
+        padding: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #e6f2ff;
+        transition: background-color 0.3s ease;
+    }
+</style>
+<body>
+    
+    <h1 style="text-align:center"> {{ sec_name }}</h1>
+    <h2 style="text-align:center">Student Details</h2>
+        <table>
+            <tr>
+                <th>Student Name</th>
+                <th>Roll Number</th>
+            </tr>
+            {% for i in sec %}
+            <tr>
+                <td>{{ i.StudentName }} </td>
+                <td>{{ i.StudentID }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+</body>

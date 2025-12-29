@@ -23,12 +23,21 @@ def student_details(request, sec_id):
     sec = x.students_set.all()
     return render(request, "clgforms/StudentDetails.html", {"sec": sec, "sec_name":x})
 
+def Section_choice(request):
+    pass
+
+def Student_form(request, sec_id):
+    x = Section.objects.get(pk=sec_id)
+    return render(request,"clgforms/StudentForm.html", {"sec_id":sec_id, "x":x})
+
 def insert_student(request,sec_id):
     try:
         x = get_object_or_404(Section, pk=sec_id)
         Selected = x.students_set.create(StudentName=request.POST["StudentName"], StudentID=request.POST["StudentID"])
     except (KeyError, Students.DoesNotExist) as e:
         return HttpResponse(f"<h1>Cannot be created or Does not Existed</h1> <br> {e}")
+    except Exception as ex:
+        return HttpResponse(f"{ex}")
     else:
         Selected.save()
         return HttpResponseRedirect(reverse("clgforms:student_details",args=(sec_id,)))

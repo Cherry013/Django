@@ -19,7 +19,7 @@ from .models import Choice, Question
 #     return render(req, "django-polls/index.html", context)
 
 class IndexView(generic.ListView):
-    template_name = "django-polls/index.html"
+    template_name = "polls/index.html"
     context_object_name = "latest_question_list"
 
     def get_queryset(self):
@@ -41,7 +41,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question
-    template_name = "django-polls/detail.html"
+    template_name = "polls/detail.html"
 
     def get_queryset(self):
         """
@@ -56,7 +56,7 @@ class DetailView(generic.DetailView):
 
 class ResultsView(generic.DetailView):
     model = Question
-    template_name = "django-polls/results.html"
+    template_name = "polls/results.html"
 
 
 def vote(request, question_id):
@@ -67,7 +67,7 @@ def vote(request, question_id):
         # Redisplay the question voting form.
         return render(
             request,
-            "django-polls/detail.html",
+            "polls/detail.html",
             {
                 "question": question,
                 "error_message": "You didn't select a choice.",
@@ -79,4 +79,4 @@ def vote(request, question_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse("django-polls:results", args=(question.id,)))
+        return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))

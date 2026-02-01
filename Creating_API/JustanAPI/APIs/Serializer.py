@@ -1,5 +1,13 @@
 from rest_framework import serializers
 
+from .models import Friends
+
+
+class FriendSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Friends
+        fields = '__all__'
+
 
 # # Basic Serializer
 # class UserSerializer(serializers.Serializer):
@@ -30,7 +38,7 @@ from rest_framework import serializers
 
 
 # Model Serializer
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = "__all__"
+# class UserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = "__all__"

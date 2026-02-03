@@ -6,6 +6,7 @@ class Student(models.Model):
     age = models.IntegerField()
     email = models.EmailField()
     created_date = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
 
 
     def __str__(self):
